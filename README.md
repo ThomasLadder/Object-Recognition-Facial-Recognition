@@ -19,10 +19,24 @@ The script will take up to 30 seconds to run. Eventually, a window labeled "Obje
 The model I am running is called ssdlite_mobilenet_v2_coco. It is a pre-trained model that is optimized for low-power machines. That means it sacrifices a bit of accuracy and frame rate so it can run on the Raspberry Pi, but it works fine for a demo. The model is trained to recognize 90 objects, which are listed here: https://github.com/amikelive/coco-labels/blob/master/coco-labels-paper.txt
 
 ### Adjustments
-The main adjustment I have made to the model is a single change in labeling. I changed the label of "cell phone" to "gun", which means every time the model recognizes a cell phone, it will label it as "gun". This is to get some conversation started by framing an example of a deadly mistake that actual humans have made.
+The main adjustment I have made to the model is a single change in labeling. I changed the label of "cell phone" to "gun", which means every time the model recognizes a cell phone, it will label it as "gun". This is to get conversation started by framing an example of a deadly mistake that real humans have made.
 
 ## Facial-Recongition
-Facial-Recognition will be ran on Macbook Pro. Facial-Recognition uses  Demo requires Tensorflow, OpenCV, and Dlib.
+Facial-Recognition will be ran on Macbook Pro. Facial-Recognition uses FacialRecognition.py and TakePic.py. Demo requires Tensorflow, OpenCV, and Dlib.
 
 ### Usage
-Navigate to 
+This demo uses two scripts, FaceDetection.py and TakePic.py. Both are located in the FacialDetection directory. Navigate to the FacialDetection directory to begin:
+```
+cd FacialDetection
+```
+To run the FacialRecognition.py script:
+```
+python FacialRecognition 
+```
+The script will take up to 30 seconds to get started. A camera window will pop up. The camera will draw a green box around any person it recognizes. The camera should recognize a person if 
+To run the TakePic.py script:
+```
+python TakePic.py
+```
+
+
