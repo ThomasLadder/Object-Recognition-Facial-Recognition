@@ -18,7 +18,7 @@ The script will take up to 30 seconds to run. Eventually, a window labeled "Obje
 ### Information
 The model I am running is called ssdlite_mobilenet_v2_coco. It is a pre-trained model that is optimized for low-power machines. That means it sacrifices a bit of accuracy and frame rate so it can run on the Raspberry Pi, but it works fine for a demo. The model is trained to recognize 90 objects, which are listed here: https://github.com/amikelive/coco-labels/blob/master/coco-labels-paper.txt
 
-### Adjustments
+### Adjustment
 The main adjustment I have made to the model is a single change in labeling. I changed the label of "cell phone" to "gun", which means every time the model recognizes a cell phone, it will label it as "gun". This is to get conversation started by framing an example of a deadly mistake that real humans have made.
 
 ## Facial-Recongition
@@ -29,14 +29,22 @@ This demo uses two scripts, FaceDetection.py and TakePic.py. Both are located in
 ```
 cd FacialDetection
 ```
-To run the FacialRecognition.py script:
+Run the FaceDetection.py script.
+
+The script will take up to 30 seconds to get started. A camera window will pop up. The camera will draw a green box around any person it recognizes. The camera should recognize a person if their photo is in the myImages folder. It will label them as whatever the image is named in the folder. Press "q" to quit.
+
+To enter a new person into the myImages folder using the webcam, run TakePic.py.
+
+This will bring up another camera window. To take a picture, press the spacebar. The camera window will freeze, and the terminal will ask you to enter your name. Note that the Terminal may be hidden behind the camera window. Once a name is entered, the image will be saved to the facialImages folder, and it will be named whatever you entered. When the camera recognizes you with FacialRecognition.py, this is the name that will pop up.
+
+### Information
+The myImages folder will be filled with photos of celebrities and random people found from a database online. It is possible that someone could be misidentified. If a person does not have a photo in the facialImages folder, it is likely they will be misidentified, especially if the model strictness has been lowered.
+
+### Adjusting Strictness
+On line 10 of FaceDetection.py:
+```python
+MAX_DISTANCE = 0.6  # increase to make recognition less strict, decrease to make more strict
 ```
-python FacialRecognition 
-```
-The script will take up to 30 seconds to get started. A camera window will pop up. The camera will draw a green box around any person it recognizes. The camera should recognize a person if 
-To run the TakePic.py script:
-```
-python TakePic.py
-```
+As the comment says. Increase to make it more likely to recognize you as someone, but possibly someone you're not. Decrease to reduce the chance of misidentification. As a guideline, it seems .9 is as loose as you'd need it to be and .2-.3 is as strict as it can be while remaining useful.
 
 
