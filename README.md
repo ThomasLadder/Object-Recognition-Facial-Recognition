@@ -2,7 +2,7 @@
 Tech demo for Technology + Ethics
 
 ## Object-Recogntion
-Object recognition will be ran on the Raspberry Pi. Demo requires Tensorflow, OpenCV, and Protobuf.
+Object recognition will be ran on the Raspberry Pi. Object-Recognition will use Object_detection_picamera.py. Demo requires Tensorflow, OpenCV, and Protobuf.
 
 ### Usage
 Boot up Raspberry Pi. Make sure camera module is plugged in and propped up on "camera stand". To run the object recognition script, navigate to the correct directory:
@@ -22,7 +22,7 @@ The model I am running is called ssdlite_mobilenet_v2_coco. It is a pre-trained 
 The main adjustment I have made to the model is a single change in labeling. I changed the label of "cell phone" to "gun", which means every time the model recognizes a cell phone, it will label it as "gun". This is to get some conversation started by framing an example of a deadly mistake that actual humans have made.
 
 ## Facial-Recongition
-Facial-Recognition will be ran on Macbook Pro. Demo requires Tensorflow, OpenCV, and Dlib.
+Facial-Recognition will be ran on Macbook Pro. Facial-Recognition uses  Demo requires Tensorflow, OpenCV, and Dlib.
 
 ### Usage
 Navigate to 
