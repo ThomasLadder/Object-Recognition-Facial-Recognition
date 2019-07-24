@@ -19,9 +19,12 @@ while True:
     elif k%256 == 32:
         # SPACE pressed
         img_name = input('Enter your name : ')
-        cv2.imwrite('/Users/thomasyoung/myImages/' + str(img_name) + '.jpg', frame)
+        # User inputs name as string
+        cv2.imwrite('YourFilePath' + str(img_name) + '.jpg', frame)
+        # Saves picture to directory, named *whatever the user input*.jpg
         print(str(img_name) + " was entered into the database.")
 
 cam.release()
 
 cv2.destroyAllWindows()
+#Closes program
