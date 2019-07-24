@@ -6,13 +6,13 @@ Object recognition will be ran on the Raspberry Pi. Demo requires Tensorflow, Op
 
 ### Usage
 Boot up Raspberry Pi. Make sure camera module is plugged in and propped up on "camera stand". To run the object recognition script, navigate to the correct directory:
-'''
+```
 cd /home/pi/tensorflow1/models/research/object_detection
-'''
+```
 Now simply run the script with python3:
-'''
+```
 python3 Object_detection_picamera.py
-'''
+```
 The script will take up to 30 seconds to run. Eventually, a window labeled "Object detector" should pop up. This window shows the view of the camera. It will draw a rectangle around any objects it recognizes, with the name of the object and the confidence that it is indeed that object (in %). 
 
 ### Information
