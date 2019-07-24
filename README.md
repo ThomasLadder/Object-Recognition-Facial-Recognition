@@ -2,7 +2,7 @@
 Tech demo for Technology + Ethics
 
 ## Object-Recogntion
-Object recognition will be ran on the Raspberry Pi. Object-Recognition will use Object_detection_picamera.py. Demo requires Tensorflow, OpenCV, and Protobuf.
+Object-Recognition will be ran on the Raspberry Pi. Object-Recognition will use Object_detection_picamera.py. Demo requires Tensorflow, OpenCV, and Protobuf.
 
 ### Usage
 Boot up Raspberry Pi. Make sure camera module is plugged in and propped up on "camera stand". To run the object recognition script, navigate to the correct directory:
@@ -22,23 +22,25 @@ The model I am running is called ssdlite_mobilenet_v2_coco. It is a pre-trained 
 The main adjustment I have made to the model is a single change in labeling. I changed the label of "cell phone" to "gun", which means every time the model recognizes a cell phone, it will label it as "gun". This is to get conversation started by framing an example of a deadly mistake that real humans have made.
 
 ## Facial-Recongition
-Facial-Recognition will be ran on Macbook Pro. Facial-Recognition uses FacialRecognition.py and TakePic.py. Demo requires Tensorflow, OpenCV, and Dlib.
+Facial-Recognition will be ran on Macbook Pro. Facial-Recognition uses FaceDetection.py and TakePic.py. Demo requires Tensorflow, OpenCV, and Dlib.
 
 ### Usage
-This demo uses two scripts, FaceDetection.py and TakePic.py. Both are located in the FacialDetection directory. Navigate to the FacialDetection directory to begin:
+This demo uses two scripts, FaceDetection.py and TakePic.py. Both are located in the FacialRecogntion directory. Navigate to the FacialDetection directory to begin:
 ```
 cd FacialDetection
 ```
 Run the FaceDetection.py script.
 
-The script will take up to 30 seconds to get started. A camera window will pop up. The camera will draw a green box around any person it recognizes. The camera should recognize a person if their photo is in the myImages folder. It will label them as whatever the image is named in the folder. Press "q" to quit.
+#### FaceDetection.py
+The script will take up to 30 seconds to get started. A camera window will pop up. The camera will draw a green box around any person it recognizes. The camera should recognize a person if their photo is in the facialImages folder. It will label them as whatever the image is named in the folder. Press "q" to quit.
 
-To enter a new person into the myImages folder using the webcam, run TakePic.py.
+The facialImages folder is located in the FacialRecognition folder.  To enter a new person into the facialImages folder using the webcam, run TakePic.py.
 
-This will bring up another camera window. To take a picture, press the spacebar. The camera window will freeze, and the terminal will ask you to enter your name. Note that the Terminal may be hidden behind the camera window. Once a name is entered, the image will be saved to the facialImages folder, and it will be named whatever you entered. When the camera recognizes you with FacialRecognition.py, this is the name that will pop up.
+#### TakePic.py
+This will bring up another camera window. To take a picture, press the spacebar. The camera window will freeze, and the terminal will ask you to enter your name. Note that the Terminal may be hidden behind the camera window. Once a name is entered, the image will be saved to the facialImages folder, and it will be named whatever you entered. When the camera recognizes you with FacialRecognition.py, this is the name that will pop up. You can take additional pictures while the window is still open. Press "q" to quit.
 
-### Information
-The myImages folder will be filled with photos of celebrities and random people found from a database online. It is possible that someone could be misidentified. If a person does not have a photo in the facialImages folder, it is likely they will be misidentified, especially if the model strictness has been lowered.
+### facialImages Info
+The facialImages folder will be filled with photos of celebrities and random people found from a database online. It is possible that someone could be misidentified. If a person does not have a photo in the facialImages folder, it is likely they will be misidentified, especially if the model strictness has been lowered.
 
 ### Adjusting Strictness
 On line 10 of FaceDetection.py:
