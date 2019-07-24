@@ -20,8 +20,9 @@ while True:
         # SPACE pressed
         img_name = input('Enter your name : ')
         # User inputs name as string
-        cv2.imwrite('YourFilePath' + str(img_name) + '.jpg', frame)
+        cv2.imwrite('/Users/thomasyoung/FacialRecognition/facialImages/' + str(img_name) + '.jpg', frame)
         # Saves picture to directory, named *whatever the user input*.jpg
+        # Replace /Users/thomasyoung/FacialRecognition/facialImages/ with your own directory
         print(str(img_name) + " was entered into the database.")
 
 cam.release()
