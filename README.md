@@ -5,7 +5,7 @@ Tech demo for Technology + Ethics
 Object-Recognition will be ran on the Raspberry Pi. Object-Recognition will use Object_detection_picamera.py. Demo requires Tensorflow, OpenCV, and Protobuf.
 
 ### Usage
-Boot up Raspberry Pi. Make sure camera module is plugged in and propped up on "camera stand". To run the object recognition script, navigate to the correct directory:
+Boot up Raspberry Pi. Make sure camera module is plugged in and propped up on camera stand. To run the object recognition script, navigate to the correct directory:
 ```
 cd /home/pi/tensorflow1/models/research/object_detection
 ```
