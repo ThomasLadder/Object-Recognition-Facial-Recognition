@@ -1,8 +1,12 @@
 # Object-Recognition-Facial-Recognition
-Tech demo for Technology + Ethics
+Tech demo for Young Peoples Race Power and Technology (YPRPT) group.  
+
+*Note: a significant amount of code is derived from the following tutorials:  
+Facial Recognition - https://medium.com/data-science-lab-amsterdam/face-recognition-with-python-in-an-hour-or-two-d271324cbeb3  
+Object Recognition - https://github.com/EdjeElectronics/TensorFlow-Object-Detection-on-the-Raspberry-Pi*
 
 ## Object-Recogntion
-Object-Recognition will be ran on the Raspberry Pi. Object-Recognition will use Object_detection_picamera.py. Demo requires Tensorflow, OpenCV, and Protobuf.
+Object-Recognition runs on the Raspberry Pi 3+ with Raspbian Buster 10.0. Object-Recognition will use Object_detection_picamera.py. Demo requires Tensorflow, OpenCV, and Protobuf. Used pip version 18.1 for installs.
 
 ### Usage
 Boot up Raspberry Pi. Make sure camera module is plugged in and propped up on camera stand. To run the object recognition script, navigate to the correct directory:
@@ -22,7 +26,7 @@ The model I am running is called ssdlite_mobilenet_v2_coco. It is a pre-trained 
 The main adjustment I have made to the model is a single change in labeling. I changed the label of "cell phone" to "gun", which means every time the model recognizes a cell phone, it will label it as "gun". This is to get conversation started by framing an example of a deadly mistake that real humans have made.
 
 ## Facial-Recongition
-Facial-Recognition will be ran on Macbook Pro. Facial-Recognition uses FaceDetection.py and TakePic.py. Demo requires Tensorflow, OpenCV, and Dlib.
+Facial-Recognition runs on Macbook Pro with MacOS Mojave 10.14.6. Facial-Recognition uses FaceDetection.py and TakePic.py. Demo requires Tensorflow, OpenCV, and Dlib. Used pip version 19.2.1 for installs.
 
 ### Usage
 This demo uses two scripts, FaceDetection.py and TakePic.py. Both are located in the FacialRecogntion directory. Navigate to the FacialDetection directory to begin:
@@ -47,6 +51,7 @@ On line 10 of FaceDetection.py:
 ```python
 MAX_DISTANCE = 0.6  # increase to make recognition less strict, decrease to make more strict
 ```
-As the comment says. Increase to make it more likely to recognize you as someone, but possibly someone you're not. Decrease to reduce the chance of misidentification. As a guideline, it seems .9 is as loose as you'd need it to be and .2-.3 is as strict as it can be while remaining useful.
+Increase to make it more likely to recognize you as someone, but possibly someone you're not. Decrease to reduce the chance of misidentification. As a guideline, it seems .9 is as loose as you'd need it to be and .2-.3 is as strict as it can be while remaining useful.
+
 
 
